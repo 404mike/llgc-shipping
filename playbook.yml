@@ -6,7 +6,7 @@
     servername: myApp.dev
     timezone: UTC
   vars_files:
-    - ansible-playbook/ansible/vars/app.yml
+    - vars/app.yml
     - ansible-playbook/ansible/vars/yo.yml
     - ansible-playbook/ansible/vars/mysql.yml
     - ansible-playbook/ansible/vars/pgsql.yml
