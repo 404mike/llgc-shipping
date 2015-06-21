@@ -1,0 +1,1 @@
+{"virtualbox":{"/vagrant/app/storage":{"owner":"www-data","group":"www-data","guestpath":"/vagrant/app/storage","hostpath":"/Users/Mike/www/uguisu/app/storage","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/Mike/www/uguisu","disabled":false}}}

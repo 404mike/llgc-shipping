@@ -1,0 +1,33 @@
+---
+- hosts: all
+  sudo: true
+  vars:
+    web_server: nginxphp
+    servername: myApp.dev
+    timezone: UTC
+  vars_files:
+    - ansible-playbook/ansible/vars/app.yml
+    - ansible-playbook/ansible/vars/yo.yml
+    - ansible-playbook/ansible/vars/mysql.yml
+    - ansible-playbook/ansible/vars/pgsql.yml
+    - ansible-playbook/ansible/vars/common.yml
+    - ansible-playbook/ansible/vars/nginxphp.yml
+    - ansible-playbook/ansible/vars/ws_defaults.yml
+    - ansible-playbook/ansible/vars/mongodb.yml
+  roles:
+    - ../ansible-playbook/ansible/roles/init
+    - ../ansible-playbook/ansible/roles/nginx
+    # - java
+    # - solr
+    # - elasticsearch
+    - ../ansible-playbook/ansible/roles/php5-cli
+    - ../ansible-playbook/ansible/roles/php5-fpm
+    - ../ansible-playbook/ansible/roles/phpcommon
+    - ../ansible-playbook/ansible/roles/php-pecl
+    # - nodejs
+    # - mongodb
+    - ../ansible-playbook/ansible/roles/composer
+    # - mysql
+    # - pgsql
+    - ../ansible-playbook/ansible/roles/app
+    # - yo
