@@ -183,7 +183,25 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath:  /\.\.\//
+        ignorePath:  /\.\.\//,
+
+
+
+        fileTypes: {
+          html: {
+            replace: {
+              js: function(filePath) {
+                return '<script src="' + 'cynefin/' + filePath + '"></script>';
+              },
+              css: function(filePath) {
+                return '<link rel="stylesheet" href="' + 'cynefin/' + filePath + '"/>';
+              }
+            }
+          }
+        }
+
+
+
       },
       test: {
         devDependencies: true,
