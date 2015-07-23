@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return File::get(public_path() . '/cynefin/app/index.html');
+    return File::get(public_path() . '/shipping/app/index.html');
 });

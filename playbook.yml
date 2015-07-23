@@ -17,8 +17,8 @@
   roles:
     - ../ansible-playbook/ansible/roles/init
     - ../ansible-playbook/ansible/roles/nginx
-    # - java
-    # - solr
+    - ../ansible-playbook/ansible/roles/java
+    - ../ansible-playbook/ansible/roles/solr
     # - elasticsearch
     - ../ansible-playbook/ansible/roles/php5-cli
     - ../ansible-playbook/ansible/roles/php5-fpm
