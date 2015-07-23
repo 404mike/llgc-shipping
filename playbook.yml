@@ -24,7 +24,7 @@
     - ../ansible-playbook/ansible/roles/php5-fpm
     - ../ansible-playbook/ansible/roles/phpcommon
     - ../ansible-playbook/ansible/roles/php-pecl
-    # - nodejs
+    - ../ansible-playbook/ansible/roles/nodejs
     # - mongodb
     - ../ansible-playbook/ansible/roles/composer
     # - mysql
