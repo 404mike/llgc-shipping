@@ -71,10 +71,14 @@ class Ingest {
           if($value[0] == "Edward Jones") continue;
           else{
             // Create XML document
-            $xml = new SimpleXMLElement('<doc/>');
+            $xml_main = new SimpleXMLElement('<add/>');
+            $xml = $xml_main->addChild('doc');
               
             $id = $xml->addChild('field' , $parentId.'_'.$page.'_'.$row);
             $id->addAttribute('name', 'id');
+
+            $id = $xml->addChild('field' , 'sailor');
+            $id->addAttribute('name', 'type');               
 
             $parent = $xml->addChild('field' , $parentId);
             $parent->addAttribute('name' , 'parent');
@@ -128,7 +132,8 @@ class Ingest {
             $notes->addAttribute('name' , 'notes');
 
             // Header('Content-type: text/xml');
-            print($xml->asXML());
+            $this->sendToSolr($xml_main->asXML());
+            // print($xml_main->asXML());
           }  
         }
       }
@@ -169,8 +174,9 @@ class Ingest {
       }
 
       // Create XML document
-      $xml = new SimpleXMLElement('<doc/>');
-
+      $xml_main = new SimpleXMLElement('<add/>');
+      $xml = $xml_main->addChild('doc');
+      
       $id = $xml->addChild('field' , $id);
       $id->addAttribute('name', 'id');
 
@@ -187,7 +193,8 @@ class Ingest {
       $port_of_registry->addAttribute('name', 'port_of_registry');
 
       // Header('Content-type: text/xml');
-      print($xml->asXML());
+      // print($xml->asXML());
+      $this->sendToSolr($xml_main->asXML());
 
     }catch(Exception $e) {
       echo "Could not read file";
@@ -200,7 +207,34 @@ class Ingest {
    */
   private function sendToSolr($file)
   {
+    echo "semdmg";
+    $url = "http://localhost:8983/solr/collection1/update?commit=true";
+    $post_string = $file;
 
+    $header = array("Content-type:text/xml; charset=utf-8");
+
+    $ch = curl_init();
+
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $post_string);
+    curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+    curl_setopt($ch, CURLINFO_HEADER_OUT, 1);
+
+    $data = curl_exec($ch);
+
+    if (curl_errno($ch)) {
+       print "curl_error:" . curl_error($ch);
+    } else {
+       curl_close($ch);
+       print "curl exited okay\n";
+       echo "Data returned...\n";
+       echo "------------------------------------\n";
+       echo $data;
+       echo "------------------------------------\n";
+    }
   }
 
 }
