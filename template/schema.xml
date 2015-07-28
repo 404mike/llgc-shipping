@@ -22,25 +22,25 @@
    <field name="name" type="text_general" indexed="true" stored="true" multiValued="false" /> 
    <field name="dob" type="string" indexed="true" stored="true" multiValued="false" /> 
    <field name="age" type="string" indexed="true" stored="true" multiValued="false" /> 
-   <field name="place_of_birth" type="string" indexed="true" stored="true" multiValued="false" /> 
-   <field name="home_address" type="string" indexed="true" stored="true" multiValued="false" /> 
-   <field name="name_of_ship" type="string" indexed="true" stored="true" multiValued="false" /> 
-   <field name="ship_port" type="string" indexed="true" stored="true" multiValued="false" /> 
-   <field name="date_leaving" type="string" indexed="true" stored="true" multiValued="false" /> 
-   <field name="joined_ship_date" type="string" indexed="true" stored="true" multiValued="false" /> 
-   <field name="joined_at_port" type="string" indexed="true" stored="true" multiValued="false" /> 
-   <field name="capacity" type="string" indexed="true" stored="true" multiValued="false" /> 
-   <field name="date_left" type="string" indexed="true" stored="true" multiValued="false" /> 
-   <field name="left_port" type="string" indexed="true" stored="true" multiValued="false" /> 
-   <field name="cause_of_leaving" type="string" indexed="true" stored="true" multiValued="false" /> 
-   <field name="sign_with_mark" type="string" indexed="true" stored="true" multiValued="false" /> 
-   <field name="notes" type="string" indexed="true" stored="true" multiValued="false" /> 
+   <field name="place_of_birth" type="text_general" indexed="true" stored="true" multiValued="false" /> 
+   <field name="home_address" type="text_general" indexed="true" stored="true" multiValued="false" /> 
+   <field name="name_of_ship" type="text_general" indexed="true" stored="true" multiValued="false" /> 
+   <field name="ship_port" type="text_general" indexed="true" stored="true" multiValued="false" /> 
+   <field name="date_leaving" type="text_general" indexed="true" stored="true" multiValued="false" /> 
+   <field name="joined_ship_date" type="text_general" indexed="true" stored="true" multiValued="false" /> 
+   <field name="joined_at_port" type="text_general" indexed="true" stored="true" multiValued="false" /> 
+   <field name="capacity" type="text_general" indexed="true" stored="true" multiValued="false" /> 
+   <field name="date_left" type="text_general" indexed="true" stored="true" multiValued="false" /> 
+   <field name="left_port" type="text_general" indexed="true" stored="true" multiValued="false" /> 
+   <field name="cause_of_leaving" type="text_general" indexed="true" stored="true" multiValued="false" /> 
+   <field name="sign_with_mark" type="text_general" indexed="true" stored="true" multiValued="false" /> 
+   <field name="notes" type="text_general" indexed="true" stored="true" multiValued="false" /> 
 
    <!-- vessel -->
-   <field name="log_book" type="string" indexed="true" stored="true" multiValued="false" /> 
-   <field name="vessel_name" type="string" indexed="true" stored="true" multiValued="false" /> 
+   <field name="vessel_name" type="text_general" indexed="true" stored="true" multiValued="false" /> 
+   <field name="vessel_name_fixed" type="string" indexed="true" stored="true" multiValued="false" /> 
    <field name="ship_official_number" type="string" indexed="true" stored="true" multiValued="false" /> 
-   <field name="port_of_registry" type="string" indexed="true" stored="true" multiValued="false" /> 
+   <field name="port_of_registry" type="text_general" indexed="true" stored="true" multiValued="false" /> 
 
  <!-- Field to use to determine and enforce document uniqueness. 
       Unless this field is marked with required="false", it will be a required field

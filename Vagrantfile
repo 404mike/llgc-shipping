@@ -1,5 +1,11 @@
 Vagrant.configure("2") do |config|
 
+   if Vagrant.has_plugin?("vagrant-proxyconf")
+     config.proxy.http     = "http://cache.llgc.org.uk:80/"
+     config.proxy.https    = "http://cache.llgc.org.uk:80/"
+     config.proxy.no_proxy = "localhost,127.0.0.1,mike.dev"
+   end
+
     # Box configuration.
     config.vm.box       = "ubuntu/trusty64"
     #config.vm.box_url   = "http://files.vagrantup.com/precise64.box"

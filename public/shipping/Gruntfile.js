@@ -191,7 +191,7 @@ module.exports = function (grunt) {
           html: {
             replace: {
               js: function(filePath) {
-                return '<script src="' + 'shipping' + filePath + '"></script>';
+                return '<script src="' + 'shipping/' + filePath + '"></script>';
               },
               css: function(filePath) {
                 return '<link rel="stylesheet" href="' + 'shipping/' + filePath + '"/>';

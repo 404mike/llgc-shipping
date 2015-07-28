@@ -2,17 +2,16 @@
 
 /**
  * @ngdoc function
- * @name shippingApp.controller:MainCtrl
+ * @name shippingApp.controller:MikeCtrl
  * @description
- * # MainCtrl
+ * # MikeCtrl
  * Controller of the shippingApp
  */
 angular.module('shippingApp')
-  .controller('MainCtrl', function ($http) {
+  .controller('MikeCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
-    ];   
-
+    ];
   });

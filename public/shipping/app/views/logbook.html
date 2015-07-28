@@ -1,0 +1,36 @@
+<h3>Log book details for {{ data.ship.vessel_name }}</h3>
+
+<ul>
+  <li>Offical Ship Number: {{ data.ship.ship_official_number }}</li>
+  <li>Port of Registry: {{ data.ship.port_of_registry }}</li>
+</ul>
+
+<h4>Crew</h4>
+
+<div class="crewlist" ng-repeat="c in data.crew" ng-init="crew=getCrewPicture()">
+
+  <div class="crew_image">
+    <img src="shipping/app/images/pirates/{{ crew }}.jpg" alt="picture of a pirate"/>
+  </div>
+  
+  <div class="crew_details">
+    <ul>
+      <li>Name: {{c.name}}</li>
+      <li>Date of Birth: {{c.dob}}</li>
+      <li>Age: {{c.age}}</li>
+      <li>Place of Birth: {{c.place_of_birth}}</li>
+      <li>Home Address: {{c.home_address}}</li>
+      <li>Name of Ship: {{c.name_of_ship}}</li>
+      <li>Ship Port: {{c.ship_port}}</li>
+      <li>Date Leaving: {{c.date_leaving}}</li>
+      <li>Joined ship date: {{c.joined_ship_date}}</li>
+      <li>Joined at port: {{c.joined_at_port}}</li>
+      <li>Capacity: {{c.capacity}}</li>
+      <li>Date Left: {{c.date_left}}</li>
+      <li>Left Port: {{c.left_port}}</li>
+      <li>Cause of Leaving: {{c.cause_of_leaving}}</li>
+      <li>Sign with mark?: {{c.sign_with_mark}}</li>
+      <li>Notes: {{c.notes}}</li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+
+<ul id="browse_alphabet">
+  <li><a href="#/browse?char=a">A</a>
+  <li><a href="#/browse?char=b">B</a>
+  <li><a href="#/browse?char=c">C</a>
+  <li><a href="#/browse?char=d">D</a>
+  <li><a href="#/browse?char=e">E</a>
+  <li><a href="#/browse?char=f">F</a>
+  <li><a href="#/browse?char=g">G</a>
+  <li><a href="#/browse?char=h">H</a>
+  <li><a href="#/browse?char=i">I</a>
+  <li><a href="#/browse?char=j">J</a>
+  <li><a href="#/browse?char=k">K</a>
+  <li><a href="#/browse?char=l">L</a>
+  <li><a href="#/browse?char=m">M</a>
+  <li><a href="#/browse?char=n">N</a>
+  <li><a href="#/browse?char=o">O</a>
+  <li><a href="#/browse?char=p">P</a>
+  <li><a href="#/browse?char=q">Q</a>
+  <li><a href="#/browse?char=r">R</a>
+  <li><a href="#/browse?char=s">S</a>
+  <li><a href="#/browse?char=t">T</a>
+  <li><a href="#/browse?char=u">U</a>
+  <li><a href="#/browse?char=v">V</a>
+  <li><a href="#/browse?char=w">W</a>
+  <li><a href="#/browse?char=x">X</a>
+  <li><a href="#/browse?char=y">Y</a>
+  <li><a href="#/browse?char=z">Z</a>
+</ul>
+
+
+<div ng-if="data.total_ships != 0">
+
+  <h3>Found {{ data.total_ships }} Ships and {{ data.total_log_books }} log books</h3>
+
+  <ul>
+    <li ng-repeat="d in data.data"><a href="#/ship?id={{ d.id}}">{{ d.vessel_name }} - {{d.num_log_books }} log books</a></li>
+  </ul>
+
+</div>

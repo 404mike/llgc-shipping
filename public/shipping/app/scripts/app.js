@@ -34,6 +34,21 @@ angular
         controller: 'TestCtrl',
         controllerAs: 'test'
       })
+      .when('/browse/:char?', {
+        templateUrl: 'shipping/app/views/browse.html',
+        controller: 'BrowseCtrl',
+        controllerAs: 'browse'
+      })
+      .when('/ship:id?', {
+        templateUrl: 'shipping/app/views/ship.html',
+        controller: 'ShipCtrl',
+        controllerAs: 'ship'
+      })
+      .when('/logbook:id?', {
+        templateUrl: 'shipping/app/views/logbook.html',
+        controller: 'LogbookCtrl',
+        controllerAs: 'logbook'
+      })
       .otherwise({
         redirectTo: '/'
       });
