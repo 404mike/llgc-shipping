@@ -1,0 +1,292 @@
+html, body {
+  background-color: #090A61;
+  margin: 0;
+}
+
+a {
+  color: rgb(195, 221, 231);
+}
+
+h2 a {
+  color: #333333;
+  background-color: #FFFECF;
+  text-decoration: none;
+  font-style: italic;
+}
+h2 a:hover {
+  color: #FFFECF;
+  background-color: #333333;
+}
+
+#tweet {
+  margin: 0 15%;
+  position: absolute;
+  color: #23A1A1;
+  font-size: 26px;
+  text-align: center;
+  width: 70%;
+}
+#tweet a {
+  color: #018282;
+  font-style: italic;
+  text-decoration: none;
+}
+#tweet a:hover {
+  background-color: #DEF2FF;
+}
+#tweet p.author {
+  padding-top: 10px;
+  font-size: 11px;
+}
+
+h1 {
+  -moz-user-select: none;
+  cursor: default;
+  width: 100%;
+  text-align: center;
+  color: #efefef;
+  font-size: 250px;
+  position: absolute;
+}
+
+
+/*Lets start with the cloud formation rather*/
+
+/*The container will also serve as the SKY*/
+
+#sun_moon_container {
+  position: relative;
+}
+
+#sun_moon {
+width: 150px;
+height: 150px;
+background: #FFFF1C;
+-moz-border-radius: 50px;
+-webkit-border-radius: 50px;
+border-radius: 80px;
+left: 10px;
+top: 10px;
+position: relative;
+}
+
+canvas#world {
+height: 181px;
+width: 100%;
+top: -260px;
+position: relative;
+}
+div#clouds {
+/* margin: 0; */
+/* position: relative; */
+padding: 0;
+}
+
+div#shipcontainer {
+margin: 0 auto;
+width: 200px;
+position: relative;
+top: -176px;
+z-index: 1;
+}
+
+#ship{
+  position: relative;
+}
+
+#sea {
+  margin-top: -212px;
+  padding: 100px 0;
+  background: #c9dbe9;
+  background: -webkit-linear-gradient(top, #0E95FD 0%, #090A61 100%);
+  background: -linear-gradient(top, #0E95FD 0%, #090A61 100%);
+  background: -moz-linear-gradient(top, #0E95FD 0%, #090A61 100%);
+  position: relative;
+}
+
+
+#clouds{
+  /*padding: 100px 0;*/
+  background: #7CC5FF;
+/*  background: -webkit-linear-gradient(top, #7CC5FF 0%, #fff 100%);
+  background: -linear-gradient(top, #7CC5FF 0%, #fff 100%);
+  background: -moz-linear-gradient(top, #7CC5FF 0%, #fff 100%);*/
+}
+
+/*Time to finalise the cloud shape*/
+.cloud {
+  width: 200px; height: 60px;
+  background: #fff;
+  
+  border-radius: 200px;
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+  
+  position: relative; 
+}
+
+.cloud:before, .cloud:after {
+  content: '';
+  position: absolute; 
+  background: #fff;
+  width: 100px; height: 80px;
+  position: absolute; top: -15px; left: 10px;
+  
+  border-radius: 100px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+  width: 120px; height: 120px;
+  top: -55px; left: auto; right: 15px;
+}
+
+
+
+.clear{
+  clear: both;
+}
+
+ul#browse_alphabet{
+  margin: 0 0 0 -33px;
+  height: 30px;
+  /*width: 540px;*/
+  /*margin: 0 auto;  */
+}
+
+ul#browse_alphabet li{
+  float: left;
+  list-style: none;
+}
+
+ul#browse_alphabet li a{
+  display: block;
+  padding: 5px;
+}
+
+.crewlist{
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  clear: both;
+  height: 100%;
+  padding: 10px;
+  width: 622px;
+  float: left;
+}
+
+.crew_image{
+  float: left;
+  width: 120px;
+}
+
+.crew_details{
+  float: right;
+  width: 400px;
+}
+
+div#nav {
+  /*width: 500px;*/
+  margin: 0 auto;
+}
+
+#nav a {
+  display: block;
+  padding: 10px;
+  /*text-decoration: none;*/
+  color: rgb(195, 221, 231);
+  font-size: 1.4em;
+}
+
+/*table{color: red}*/
+.tftable {font-size:12px;color:#333333;width:100%;border-width: 1px;/*border-color: #729ea5;*/border-collapse: collapse;}
+.tftable th {font-size:12px;/*background-color:#acc8cc;*/border-width: 1px;padding: 8px;border-style: solid;/*border-color: #729ea5;*/text-align:left;color: rgb(201, 210, 213);}
+/*.tftable tr {background-color:#d4e3e5;}*/
+.tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;/*border-color: #729ea5;*/color: rgb(201, 210, 213);}
+/*.tftable tr:hover {background-color:#acc8cc;}*/
+
+
+div#browse_ships {
+  /*width: 490px;*/
+  margin: 10px;
+  color: #fff;
+}
+
+/*Time to animate*/
+.x1 {
+  -webkit-animation: moveclouds 15s linear infinite;
+  -moz-animation: moveclouds 15s linear infinite;
+  -o-animation: moveclouds 15s linear infinite;
+}
+
+/*variable speed, opacity, and position of clouds for realistic effect*/
+.x2 {
+  left: 200px;
+  
+  -webkit-transform: scale(0.6);
+  -moz-transform: scale(0.6);
+  transform: scale(0.6);
+  opacity: 0.6; /*opacity proportional to the size*/
+  
+  /*Speed will also be proportional to the size and opacity*/
+  /*More the speed. Less the time in 's' = seconds*/
+  -webkit-animation: moveclouds 25s linear infinite;
+  -moz-animation: moveclouds 25s linear infinite;
+  -o-animation: moveclouds 25s linear infinite;
+}
+
+.x3 {
+  left: -250px; top: -200px;
+  
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0.8; /*opacity proportional to the size*/
+  
+  -webkit-animation: moveclouds 20s linear infinite;
+  -moz-animation: moveclouds 20s linear infinite;
+  -o-animation: moveclouds 20s linear infinite;
+}
+
+.x4 {
+  left: 470px; top: -250px;
+  
+  -webkit-transform: scale(0.75);
+  -moz-transform: scale(0.75);
+  transform: scale(0.75);
+  opacity: 0.75; /*opacity proportional to the size*/
+  
+  -webkit-animation: moveclouds 18s linear infinite;
+  -moz-animation: moveclouds 18s linear infinite;
+  -o-animation: moveclouds 18s linear infinite;
+}
+
+.x5 {
+  left: -150px; top: -150px;
+  
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0.8; /*opacity proportional to the size*/
+  
+  -webkit-animation: moveclouds 20s linear infinite;
+  -moz-animation: moveclouds 20s linear infinite;
+  -o-animation: moveclouds 20s linear infinite;
+}
+
+@-webkit-keyframes moveclouds {
+  0% {margin-left: 1000px;}
+  100% {margin-left: -1000px;}
+}
+@-moz-keyframes moveclouds {
+  0% {margin-left: 1000px;}
+  100% {margin-left: -1000px;}
+}
+@-o-keyframes moveclouds {
+  0% {margin-left: 1000px;}
+  100% {margin-left: -1000px;}
+}

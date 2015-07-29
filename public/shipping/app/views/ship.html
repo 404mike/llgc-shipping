@@ -1,5 +1,7 @@
-<h3>{{ data.total_log_books }} log books for {{ data.vessel_name }}</h3>
+<div id="browse_ships">
+  <h3>{{ data.total_log_books }} log books for {{ data.vessel_name }}</h3>
 
-<ul>
-  <li ng-repeat="d in data.data"><a href="#/logbook?id={{ d.id }}">{{ d.id }}</a></li>
-</ul>
+  <ul>
+    <li ng-repeat="d in data.data"><a href="#/logbook?id={{ d.id }}">{{ d.id }}</a></li>
+  </ul>
+</div>

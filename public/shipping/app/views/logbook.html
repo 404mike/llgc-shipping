@@ -1,3 +1,5 @@
+<div id="browse_ships">
+
 <h3>Log book details for {{ data.ship.vessel_name }}</h3>
 
 <ul>
@@ -6,31 +8,49 @@
 </ul>
 
 <h4>Crew</h4>
-
-<div class="crewlist" ng-repeat="c in data.crew" ng-init="crew=getCrewPicture()">
-
-  <div class="crew_image">
-    <img src="shipping/app/images/pirates/{{ crew }}.jpg" alt="picture of a pirate"/>
-  </div>
-  
-  <div class="crew_details">
-    <ul>
-      <li>Name: {{c.name}}</li>
-      <li>Date of Birth: {{c.dob}}</li>
-      <li>Age: {{c.age}}</li>
-      <li>Place of Birth: {{c.place_of_birth}}</li>
-      <li>Home Address: {{c.home_address}}</li>
-      <li>Name of Ship: {{c.name_of_ship}}</li>
-      <li>Ship Port: {{c.ship_port}}</li>
-      <li>Date Leaving: {{c.date_leaving}}</li>
-      <li>Joined ship date: {{c.joined_ship_date}}</li>
-      <li>Joined at port: {{c.joined_at_port}}</li>
-      <li>Capacity: {{c.capacity}}</li>
-      <li>Date Left: {{c.date_left}}</li>
-      <li>Left Port: {{c.left_port}}</li>
-      <li>Cause of Leaving: {{c.cause_of_leaving}}</li>
-      <li>Sign with mark?: {{c.sign_with_mark}}</li>
-      <li>Notes: {{c.notes}}</li>
-    </ul>
-  </div>
 </div>
+<table class="tftable" border="1">
+    <tr>
+        <th rowspan="2"></th>
+        <th rowspan="2">Mariner's name</th>
+        <th rowspan="2">Year of birth</th>
+        <th rowspan="2">Age</th>
+        <th rowspan="2">Place of birth</th>
+        <th rowspan="2">Home Address</th>
+        <th colspan="3">Ship on which last served</th>
+        <th colspan="3">Date and Port of joining this ship</th>
+        <th colspan="2">Date and Port of Leaving</th>
+        <th rowspan="2">Cause for leaving / Remain on board</th>
+        <th rowspan="2">Signed with a mark (Y/N)</th>
+        <th rowspan="2">Any Additional Notes</th>
+    </tr>
+    <tr>
+      <th>Name of ship</th>
+      <th>Port she belonged to</th>
+      <th>Date of leaving</th>
+      <th>Date</th>
+      <th>Port of joining</th>
+      <th>Capacity</th>
+      <th>Date Left</th>
+      <th>Port of Leaving</th>
+    </tr>
+    <tr ng-repeat="c in data.crew" ng-init="crew=getCrewPicture()">
+      <td><img src="shipping/app/images/pirates/{{ crew }}.jpg" alt="picture of a pirate"/></td>
+      <td>{{c.name}}</td>
+      <td>{{c.dob}}</td>
+      <td>{{c.age}}</td>
+      <td>{{c.place_of_birth}}</td>
+      <td>{{c.home_address}}</td>
+      <td>{{c.name_of_ship}}</td>
+      <td>{{c.ship_port}}</td>
+      <td>{{c.date_leaving}}</td>
+      <td>{{c.joined_ship_date}}</td>
+      <td>{{c.joined_at_port}}</td>
+      <td>{{c.capacity}}</td>
+      <td>{{c.date_left}}</td>
+      <td>{{c.left_port}}</td>
+      <td>{{c.cause_of_leaving}}</td>
+      <td>{{c.sign_with_mark}}</td>
+      <td>{{c.notes}}</td>
+    </tr>
+</table>
